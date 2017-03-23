@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework - 4</title>
+</head>
+<body>
+    <script>
+        /*Напиши функцию map(fn, array), которая принимает на вход функцию и массив,
+        и обрабатывает каждый элемент массива этой функцией, возвращая новый массив. Пример:*/
+
+
+        function map(fn, array) {
+            var newArray = [];
+            for (var i = 0; i < array.length; i++){
+                newArray.push(fn(array[i]));
+            }
+            return newArray + '<br>';
+        }
+        var array1 = [];
+        var array2 = [5, 6, 41, 23];
+
+        function square(x) {
+            return x * x;
+        }
+
+        function sum(x) {
+            return x + x;
+        }
+
+        document.write(map(square, array1)); //выводит пустую строку
+        document.write(array1 + '<br>');   //выводит пустую строку
+        document.write(map(square, array2));
+        document.write(array2 + '<br>');
+
+        document.write(map(sum, array1));  //выводит пустую строку
+        document.write(array1 + '<br>');   //выводит пустую строку
+        document.write(map(sum, array2));
+        document.write(array2 + '<br>');
+
+    </script>
+</body>
+</html>

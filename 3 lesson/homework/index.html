@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework3</title>
+</head>
+<body>
+<script>
+    ;(function () {
+        "use strict";
+
+        /*Напишите функцию ucFirst(str), которая возвращает строку str с заглавным первым символом, например:
+         ucFirst("вася") == "Вася";
+         ucFirst("") == ""; // нет ошибок при пустой строке
+         P.S. В JavaScript нет встроенного метода для этого. Создайте функцию, используя toUpperCase() и charAt().*/
+
+       /* var str = prompt ('Введите имя');
+        function ucFirst(str) {
+
+            if (str == undefined) {
+                return '';
+            } else if (parseFloat(str) == true) {
+                return 'Вы ввели число'
+            } else {
+                return str.charAt(0).toUpperCase()+str.substring(1);
+            }
+
+        }
+
+        document.write(ucFirst(str));
+*/
+        /*Напишите функцию min(a,b), которая возвращает меньшее из чисел a,b.
+         Пример вызовов:
+         min(2, 5) == 2
+         min(3, -1) == -1
+         min(1, 1) == 1*/
+
+        /*function getMinNumber(min, max) {
+            if (min == max) {
+                return 'Значения равны<br>';
+            } else if (min < max) {
+                return 'Минимальное значение равно = ' +min +'<br>';
+            } else {
+                return 'Минимальное значение равно = ' +max + '<br>';
+            }
+        }
+
+        document.write(getMinNumber(2, 5));
+        document.write(getMinNumber(3, -1));
+        document.write(getMinNumber(1, 1));*/
+
+        /*Повторять цикл, пока ввод неверен
+         Напишите функцию в которой цикл предлагает prompt ввести число, большее заданного аргумента функции (например 100).
+         Если посетитель ввёл другое число – попросить ввести ещё раз, и так далее.
+
+         Цикл должен спрашивать число пока либо посетитель не введёт число, большее 100, либо не нажмёт кнопку Cancel (ESC).
+
+         Предполагается, что посетитель вводит только числа. Предусмотреть обработку нечисловых строк в этой задаче*/
+
+        /*function getGreaterNumber(num) {
+            var userNum;
+
+             do {
+                 userNum = prompt('Введите число больше ' + num );
+                 if (userNum == null) {
+                     break;
+                 } else if (isNaN(parseFloat(userNum)) == true){
+                     alert('Вы ввели не число');
+                 }
+
+            } while (userNum <= num || isNaN(parseFloat(userNum)) == true);
+        }
+        getGreaterNumber(100);*/
+
+        /*Вывести простые числа
+
+         Натуральное число, большее 1, называется простым, если оно ни на что не делится, кроме себя и 1.
+
+         Другими словами, n>1 – простое, если при делении на любое число от 2 до n-1 есть остаток.
+
+         Создайте функцию, которая выводит все простые числа из интервала, который задает пользователь.*/
+
+
+
+        function primeNumbers() {
+
+            var firstNumber = prompt('Введите первое число интервала');
+            var  secondNumber = prompt('Введите второе число интервала');
+            var min = parseFloat(firstNumber);
+            var max = parseFloat(secondNumber);
+
+
+
+            if (firstNumber == undefined || secondNumber == undefined) { //если значения не были введены
+                return ('Спасибо, что посетили нашу страничку');
+            } else if (isNaN(parseFloat(firstNumber)) == true || isNaN(parseFloat(secondNumber)) == true) {  //посетитель ввел текст
+                return ('Необходимо было ввести числовые значения');
+            } else if (firstNumber <= 1 || secondNumber <= 1){
+                return ('Необходимо было ввести числа больше единицы');  // простые все числа начинаются от 2
+            } else {
+                if (parseFloat(firstNumber) > parseFloat(secondNumber)) {
+                    min = parseFloat(secondNumber);
+                    max = parseFloat(firstNumber);
+                }
+
+                nextPrime:                             //метка
+                for (var min; min <= max; min++){      // перебираем значения от минимума к максимуму
+
+                    for (var j = 2; j < min; j++) {         // проверка условия
+
+                        if (min%j == 0) continue nextPrime; //читается как если j поделилось без остатка переходи к следующему числу
+                                                             // если j не поделится не разу в заданном интервале, то цикл перейдет к пункту document.write
+                    }
+
+                    document.write( min +'<br>');
+                }
+                return '';
+            }
+        }
+
+        document.write(primeNumbers());
+
+
+
+
+      /*  var n = prompt('Vvedite max chislo');
+        n = Number(n);
+        for (var i=2; i<=n; i++){
+            for(var j=2; j<=i; j++){
+                if (i%j == 0) break;
+            }
+            if(j==i)    //если параметры совпадают, то тогда число записывается(считается простым)
+                console.log(i);
+        }*/
+    })()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework-2</title>
+</head>
+<body>
+    <script>
+        /*Создайте страницу, которая предлагает ввести два числа и выводит их сумму.*/
+        /*alert('Введите два числа, для того, чтобы получить их сумму');
+        var a = +prompt('Введите первое число');
+        var b = +prompt('Введите второе число');
+
+        alert ('Сумма чисел равна = ' + (a+b));*/
+
+        /*Имитация бросания двух игральных костей*/
+
+        /*var q = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+        var w = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+        alert('Выпали значения: ' +q+ ' и ' +w);*/
+
+        /*Имитация игры орел-решка*/
+
+        /*var coin = Math.round(Math.random());
+
+
+        if (coin == true) {
+            alert ('Орел');
+        } else {
+            alert ('Решка');
+        }
+*/
+        /*Создать программу, которая принимает значение от пользователя, а затем выводит случайное число
+        от 1 до числа, что ввел пользователь.*/
+
+        /*var maxNumber = +prompt('Введите число, которое будет макисальным для диапазона от 1 до ?');
+
+        var numberInRange= Math.floor(Math.random()*(maxNumber-1+1))+1;
+        alert (numberInRange);*/
+
+        /*Создать программу, которая принимает два значение от пользователя, а затем выводит случайное число
+        от первого до второго числа, что ввел пользователь.*/
+
+        /*var minNumber = +prompt('Введите минимальное число');
+        var maxNumber = +prompt('Введите максимальное число');
+
+        var numberInRange= Math.floor(Math.random()*(maxNumber-minNumber+1))+minNumber;
+        alert (numberInRange);*/
+
+        /*Используя конструкцию if..else, напишите код, который будет спрашивать: «Каково «официальное» название JavaScript?».
+         Если посетитель вводит «ECMAScript», то выводить «Верно!», если что-то другое – выводить «Не знаете? «ECMAScript»!».*/
+
+        /*var userAnswear = prompt(' «Каково «официальное» название JavaScript?»');
+
+        if (userAnswear.toLowerCase() == 'ECMAScript'.toLowerCase()) {
+            alert ('Верно!');
+        } else {
+            alert ('«Не знаете? «ECMAScript»!»');
+        }
+        */
+        /*Перепишите if с использованием оператора '?':*/
+
+
+        /*if (a + b < 4) {
+            result = 'Мало';
+        } else {
+            result = 'Много';
+        }*/
+        /*var a = 1;
+        var b = 1;
+
+        var result = a + b < 4 ? 'Мало' : 'Много';
+
+        alert(result);*/
+
+        var password;
+        var user = prompt('Кто пришел?', 'Admin');
+
+        if (user == 'Admin') {
+            password = prompt('Пароль?', 'Черный Властелин');
+
+            if (password == 'Черный Властелин') {
+                alert('Добро пожаловать');
+            } else if (password == null) {
+                alert('Вход отменен');
+            } else {
+                alert('Пароль неверен');
+            }
+        } else if (user == null) {
+            alert('Вход отменен');
+        } else {
+            alert('Я Вас не знаю');
+        }
+    </script>
+</body>
+</html>
