@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork - 4(home)</title>
+</head>
+<body>
+    <script>
+        /*Сумма свойств
+         Есть объект salaries с зарплатами. Напишите код, который выведет сумму всех зарплат.
+         Если объект пустой, то результат должен быть 0.*/
+
+       /* var salaries = {
+            "Вася": 100,
+            "Петя": 300,
+            "Даша": 250
+        };
+
+        var salaries1 = {
+
+        };
+
+        function getSummarySalary(listOfSalary) {
+            var sumSalary = 0;
+            for (var key in listOfSalary) {
+                sumSalary += listOfSalary[key];
+            }
+            return sumSalary;
+
+        }
+
+        console.log(getSummarySalary(salaries));
+        console.log(getSummarySalary(salaries1));*/
+
+
+        /*Свойство с наибольшим значением
+         Есть объект salaries с зарплатами.
+         Напишите код, который выведет имя сотрудника, у которого самая большая зарплата.*/
+
+       /* "use strict";
+
+        var salaries = {
+            "Вася": 100,
+            "Петя": 300,
+            "Даша": 250,
+            "Настя": 900,
+            "Саша": 1200,
+            "Татьяна": 50,
+            "Вита": 450
+
+        };
+
+        var salaries1 = {
+
+
+        };
+
+        function richPerson(listOfPersons) {
+            var nameRichPerson = 'нет сотрудников';
+            var biggersalary = 0;
+
+            for (var key in listOfPersons) {
+
+                if (biggersalary < listOfPersons[key]) {
+                    biggersalary = listOfPersons[key];
+                    nameRichPerson = key;
+
+                }
+
+
+
+            }
+            return nameRichPerson;
+        }
+
+        console.log(richPerson(salaries));
+        console.log(richPerson(salaries1));*/
+
+        /*Создать простой работающий “Онлайн тест”. Вопросы и ответы хранятся в двумерном массиве.
+        Результат выводим на страницу: You got 1 question(s) right.*/
+
+        "use strict";
+
+        function askQuestion(questions) {
+            for (var i = 0; i < questions.length; i++) {
+                var answear = prompt(questions[i] [0]);
+
+                if ((questions[i][1]).toLowerCase() == answear.toLowerCase()) {
+                    alert('You are right');
+                } else {
+                    alert ('You are wrong');
+                }
+            }
+            
+        }
+        var puzzles = [
+            ['Не огонь,\na жжется.', 'Крапива'],
+            ['Жидкое, а не вода, \nБелое, а не снег.', 'Молоко'],
+            ['К нам приехали с бахчи полосатые мячи.', 'Арбуз'],
+            ['Разноцветное коромысло \nНад рекой повисло.', 'Радуга'],
+            ['Два братца в воду глядятся,\n Век не сойдутся.', 'Берега']
+        ];
+
+        askQuestion(puzzles);
+    </script>
+
+</body>
+</html>
