@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slack</title>
+</head>
+<body>
+    <script>
+        /*Создайте обьект Unils, в котором будет метод map,
+        который мы рассматривали на уроке,
+        метод для генерации случайных чисел, и метод для возведения числа в квадрате
+        и метод для генерации массива из чисел в диапазоне, введенном пользователем.
+
+         Далее получите от пользователя два числла задающих диапазон, в котором будут числа нашего массива,
+         генерируемого выше описанной функцией.
+
+         Сгенерированный массив передайте в метод map обьекта Unils для возведения всех элеметов массива
+         в крадрат.
+         Новый массив с числами возведенными квадрат выведите в консоль.*/
+        ;(function () {
+            'use strict';
+
+            let generateArray;
+            let newArray;
+
+            let Unils = {
+                generatorOfNumbers: function (minimum, maximum) {
+                return Math.floor((Math.random()*(maximum-minimum)+1)+minimum);
+                },
+
+                generatorOfArray: function (minimum, maximum, quantity) {
+                    let generateArray = [];
+                    for (let i = 0; i < quantity; i++){
+                        generateArray[i] = this.generatorOfNumbers(minimum, maximum);
+                    }
+                    return generateArray;
+                },
+
+                square: function (x) {
+                    return x*x;
+                },
+
+                sum: function (x) {
+                    return x+x;
+                },
+
+                qwerty: function () {
+                    return -1;
+                }
+            };
+
+
+            //get from user two digits from range
+            let min = +prompt('Введите начальное значение диапазона');
+            document.write('Начальное значение диапазона : ' + min + '<br>');
+            let max = +prompt('Введите конечное значение диапазона');
+            document.write('Конечное значение диапазона : ' + max + '<br>');
+            let quantityOfNumbers = +prompt('Задайте количество чисел в массиве');
+            document.write('Количество чисел в массиве : ' + quantityOfNumbers + '<br>');
+
+            //create an array
+            generateArray = Unils.generatorOfArray(min, max, quantityOfNumbers);
+
+            //new array
+
+            newArray = generateArray.map(Unils.square, Unils);
+
+
+            document.write('Начальный массив : ' + generateArray + '<br>');
+            document.write('Измененный возведение в квадрат : ' + newArray + '<br>');
+
+            let newArraySum = generateArray.map(Unils.sum, Unils);
+            let newArrayQwerty = generateArray.map(Unils.qwerty, Unils);
+
+            document.write('Измененный сумма : ' + newArraySum + '<br>');
+            document.write('Измененный замена на -1: ' + newArrayQwerty + '<br>');
+            document.write('Начальный массив : ' + generateArray + '<br>');
+
+        })()
+
+    </script>
+</body>
+</html>
